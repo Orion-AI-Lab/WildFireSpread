@@ -17,9 +17,6 @@
 
 
 
-(IEEE Access paper, will be available soon..)
-
-
 # About The Project
 A Machine Learning ready Dataset and Model to predict final burned area from a Wildfire. <br /> <br /> 
 This project is part of my Thesis and makes use of [mesogeos](https://github.com/Orion-AI-Lab/mesogeos) Dataset and Convolutional Neural Networks models to predict final burned area from 27 remote sensing variables using spatial and temporal data.<br /> <br /> 
