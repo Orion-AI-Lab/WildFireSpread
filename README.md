@@ -5,8 +5,6 @@
 
 <p align="center">
   <a href="https://www.google.com" target="_blank"><img alt="IEEEAccess Paper" src="https://img.shields.io/badge/IEEE𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download(Coming Soon)-ff0066" /></a>
-  <a href="https://www.google.com" target="_blank"><img alt="Thesis" src="https://img.shields.io/badge/Thesis%20PDF-View|Download(Coming Soon)-ff0066" /></a>
-  <a href="https://www.google.com/maps" target="_blank"><img alt="Thesis Presentation" src="https://img.shields.io/badge/Thesis%20Presentation-View|Download (Coming Soon)-ff0066" /></a>
 </p>
 
 
@@ -19,7 +17,7 @@
 
 
 
-(IEEE Access paper, Thesis pdf and Presentation will be available soon..)
+(IEEE Access paper, will be available soon..)
 
 
 # About The Project
