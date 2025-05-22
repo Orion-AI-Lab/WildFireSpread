@@ -61,26 +61,26 @@ This project makes use of UNet2D and UNet3D models, the main difference in UNet3
 In Feature work the Dataset will be tested on a Vision Transformer (ViT) and results will be published. <br /><br />
 <br />
 
-## Models Evaluation and Metrics (latest results Feb 2025)
+## Models Evaluation and Metrics
 The main evaluation metric is the Dice Coefficient, presented below, which shows how much 2 shapes are similar, in this Segmatation Task along with Intersection Over Union (IoU) are the most important metrics.
 A baseline UNet2D is trained on only the fire day and then with all samples meaning using all 10 days each sample has. 
 
 
 | Metrics (%)         | UNet2D<br /> Baseline (1 day) | UNet2D<br /> 10days  | UNet3D <br /> 10days  | ViT <br /> 10days 
 |:------------------:|:------------------------------:|:--------------------:|:---------------------:|:--------------------------:|
-| F1 Score / Dice    | 52.7                           | 56.1                 | **57.2**              | 51.7                  
-| IoU                | 37.1                           | 40.7                 | 41.9                  | 36.7
-| Precision          | 51.0                           | 58.2                 | 59.0                  | 59.0
-| Recall             | 68.0                           | 64.0                 | 64.8                  | 56.3
+| F1 Score / Dice    | 48.3                           | 51.7                 | **53.6**              | 43.7                  
+| IoU                | 31.9                           | 34.8                 | **36.6**              | 28.0
+| Precision          | 50.2                           | 58.6                 | **59.6**              | 59.4
+| Recall             | 46.6                           | 46.2                 | **48.8**              | 34.6
 
 <br />
 
 | Metrics (%)      | UNet3D <br /> 9days  | UNet3D <br /> 8days | UNet3D <br /> 7days | UNet3D <br /> 6days
 |:----------------:|:-------------------:|:-------------------:|:-------------------:|:------------------:|
-| F1 Score / Dice  | 55.1                | 54.0                | 54.1                | 53.2
-| IoU              | 39.8                | 38.7                | 38.8                | 37.9
-| Precision        | 56.2                | 55.2                | 55.2                | 54.8
-| Recall           | 64.7                | 64.1                | 64.5                | 63.1
+| F1 Score / Dice  | 51.2                | 49.4                | 48.7                | 47.5
+| IoU              | 34.4                | 32.8                | 32.2                | 31.1
+| Precision        | 56.6                | 55.0                | 53.6                | 53.6
+| Recall           | 46.7                | 44.9                | 44.6                | 42.5
 
 <br />
 
