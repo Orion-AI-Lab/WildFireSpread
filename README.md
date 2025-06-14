@@ -3,9 +3,11 @@
 </div>
 <br /> 
 
-<p align="center">
+<!--
+p align="center">
   <a href="https://arxiv.org/abs/2505.17556" target="_blank"><img alt="IEEEAccess Paper" src="https://img.shields.io/badge/IEEE𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download-ff0066" /></a>
 </p>
+-->
 
 
 <p align="center">
