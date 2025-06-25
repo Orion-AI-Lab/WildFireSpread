@@ -11,7 +11,7 @@ p align="center">
 
 
 <p align="center">
-  <a href="https://mega.nz/file/dTBX1QrQ#2INiS8LK4fB3oLxWKAOS6cRUaHiKG1m-sJx-W9i41T0"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Download-blue" /></a>
+  <a href="https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip?download=true"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Download-blue" /></a>
   <a href="https://mega.nz/file/RTZWlCZY#H9u2s6rSAfJlgLNZLIkVvZSnJRkCGrMhWS_wnIY_aUk"><img alt="Pre-trained model" src="https://img.shields.io/badge/Pre%20Trained%20Model-Download-blue" /></a>
   <a href="https://drive.google.com/drive/folders/1cw7qrxHi9VEAlh9IMnz4xCRiPZbUDBIH?usp=sharing"><img alt="Results" src="https://img.shields.io/badge/Results-View|Download-blue" /></a>
 </p>
@@ -93,9 +93,9 @@ A baseline UNet2D is trained on only the fire day and then with all samples mean
 ## Download Best Models and Dataset
 Dataset used is in .netCDF format and separated by year and by country for every sample. For every Model Metric that is reported the checkpoint is made available which can be used with the provided test.py scripts to run the experiments.
 
-| Dataset / Best Models Checkpoints |                    Link 1 (MEGA Drive)                                                  | 
+| Dataset / Best Models Checkpoints |                    Link 1 (MEGA Drive & Hugging Face)                                                  | 
 |:-------|:------------------------------------------------------------------------------------------------------------------:|
-| Dataset (.zip)**                  | [Download](https://mega.nz/file/dTBX1QrQ#2INiS8LK4fB3oLxWKAOS6cRUaHiKG1m-sJx-W9i41T0)   | 
+| Dataset (.zip)**                  | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip?download=true)   | 
 | UNet3D (10days)                   | [Download](https://mega.nz/file/RTZWlCZY#H9u2s6rSAfJlgLNZLIkVvZSnJRkCGrMhWS_wnIY_aUk)   | 
 | Unet3D (5 days after)             | [Download](https://mega.nz/file/ZSZyAIQZ#Lr7pttkFV7Dc3GtEN7MMJV4dVJO18GSG3LiihAnhQYI)   | 
 | Unet2D (10days)                   | [Download](https://mega.nz/file/AXZigRKa#p3P-4bwaj9VGuo65RuRtQj2rT0Tz6SDZ2a3XOF3jTGU)   | 
