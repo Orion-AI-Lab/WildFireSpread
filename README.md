@@ -3,14 +3,13 @@
 </div>
 <br /> 
 
-<!--
-p align="center">
-  <a href="https://arxiv.org/abs/2505.17556" target="_blank"><img alt="IEEEAccess Paper" src="https://img.shields.io/badge/IEEE𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download-ff0066" /></a>
-</p>
--->
+
+
+
 
 
 <p align="center">
+  <a href="https://github.com/Orion-AI-Lab/WildFireSpread/" target="_blank"><img alt="IEEE Access Paper" src="https://img.shields.io/badge/IEEE 𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download-ff0066" /></a>
   <a href="https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip?download=true"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Download-blue" /></a>
   <a href="https://mega.nz/file/RTZWlCZY#H9u2s6rSAfJlgLNZLIkVvZSnJRkCGrMhWS_wnIY_aUk"><img alt="Pre-trained model" src="https://img.shields.io/badge/Pre%20Trained%20Model-Download-blue" /></a>
   <a href="https://drive.google.com/drive/folders/1cw7qrxHi9VEAlh9IMnz4xCRiPZbUDBIH?usp=sharing"><img alt="Results" src="https://img.shields.io/badge/Results-View|Download-blue" /></a>
@@ -34,7 +33,7 @@ This project makes use of [mesogeos](https://github.com/Orion-AI-Lab/mesogeos) D
 - [About the Project](#about-the-project)
   - [Dataset](#dataset)
   - [Deep Learning Models](#deep-learning-models)
-  - [Models Evaluation and Metrics (latest results Feb 2025)](#models-evaluation-and-metrics-latest-results-feb-2025)
+  - [Models Evaluation and Metrics](#models-evaluation-and-metrics)
   - [Visualiasion of Test Results](#visualiasion-of-test-results)
   - [Download Best Models and Dataset](#download-best-models-and-dataset)
 - [Getting Started](#getting-started)
@@ -44,14 +43,15 @@ This project makes use of [mesogeos](https://github.com/Orion-AI-Lab/mesogeos) D
       - [Train UNet2D](#train-unet2d)
       - [Train UNet3D](#train-unet3d)
       - [Train UNet2D Baseline](#train-unet2d-baseline)
-  - [Tesing the pre-trained Models](#tesing-the-pre-trained-models)
- - [Contributing / Contact](#contact)
+  - [Testing the pre-trained Models](#testing-the-pre-trained-models)
+ - [Citation](#citation)
+ - [Contact](#contact)
  - [Variables, Spatial and Temporal Resolution and Sources](#dataset-variables-spatial-resolution-and-sources)
 
 
 
 ## Dataset
-Training and Testing of the Models have been done with [mesogeos](https://github.com/Orion-AI-Lab/mesogeos) Dataset. Training data (and validation) are 27 variables in 64 x 64 km paches and a Spatial Resolution of 1 pixel = 1km x 1km in netCDF format. The mesogeos DataCube has 1km x 1km x 1day Spatial and Temporal resolution of 1 day. <br /> <br />
+Training and Testing of the Models have been done with [mesogeos](https://github.com/Orion-AI-Lab/mesogeos) dataset. Training data (and validation) are 27 variables in 64 x 64 km paches and a Spatial Resolution of 1 pixel = 1km x 1km in netCDF format. The mesogeos DataCube has 1km x 1km x 1day Spatial and Temporal resolution of 1 day. <br /> <br />
 The Samples from the DataCube have 64km x 64km x 1day resoltuion, for every fire event there is a 64 x 64km patch around the fire with a random offset so the burned area is not always in the middle of the patch, and for every sample there are 10 days in total, 5 before the fire started and 5 days after. Samples are from the mesogeos region and includes ≈9500 samples from 31 countries and from years 2006 to 2022. <br /><br />
 ![Alt text](https://raw.githubusercontent.com/nikos230/WildFireSpread/main/screenshots/dynamic_variables.gif)
 
@@ -60,7 +60,12 @@ The Samples from the DataCube have 64km x 64km x 1day resoltuion, for every fire
 
 ## Deep Learning Models
 This project makes use of UNet2D and UNet3D models, the main difference in UNet3D is the 3D convolution which takes into account the temporal information of the samples as the 3D convolution can get info from 3 or more days at once, the 2D convolution is good for spartial feature extraction but not for temporal feature extraction. <br />
-In Feature work the Dataset will be tested on a Vision Transformer (ViT) and results will be published. <br /><br />
+Models trained and tested :
+ - **Baseline model** U-Net 2D
+ - **Proposed model** U-Net 3D
+ - Vision Transformer
+ - ConvLSTM
+
 <br />
 
 ## Models Evaluation and Metrics
@@ -68,12 +73,12 @@ The main evaluation metric is the Dice Coefficient, presented below, which shows
 A baseline UNet2D is trained on only the fire day and then with all samples meaning using all 10 days each sample has. 
 
 
-| Metrics (%)         | UNet2D<br /> Baseline (1 day) | UNet2D<br /> 10days  | UNet3D <br /> 10days  | ViT <br /> 10days 
-|:------------------:|:------------------------------:|:--------------------:|:---------------------:|:--------------------------:|
-| F1 Score / Dice    | 48.3                           | 51.7                 | **53.6**              | 43.7                  
-| IoU                | 31.9                           | 34.8                 | **36.6**              | 28.0
-| Precision          | 50.2                           | 58.6                 | **59.6**              | 59.4
-| Recall             | 46.6                           | 46.2                 | **48.8**              | 34.6
+| Metrics (%)         | UNet2D<br /> Baseline (1 day) | UNet2D<br /> 10days  | UNet3D <br /> 10days  | ViT <br /> 10days | ConvLSTM <br /> 10days |
+|:------------------:|:------------------------------:|:--------------------:|:---------------------:|:-----------------:|:----------------------:|
+| F1 Score / Dice    | 48.3                           | 51.7                 | **53.6**              | 43.7              | 52.7             
+| IoU                | 31.9                           | 34.8                 | **36.6**              | 28.0              | 35.7
+| Precision          | 50.2                           | 58.6                 | **59.6**              | 59.4              | 59.4
+| Recall             | 46.6                           | 46.2                 | **48.8**              | 34.6              | 47.3
 
 <br />
 
@@ -93,15 +98,15 @@ A baseline UNet2D is trained on only the fire day and then with all samples mean
 ## Download Best Models and Dataset
 Dataset used is in .netCDF format and separated by year and by country for every sample. For every Model Metric that is reported the checkpoint is made available which can be used with the provided test.py scripts to run the experiments.
 
-| Dataset / Best Models Checkpoints |                    Link 1 (MEGA Drive & Hugging Face)                                                  | 
+| Dataset / Best Models Checkpoints |                    Link (Hugging Face)                                                  | 
 |:-------|:------------------------------------------------------------------------------------------------------------------:|
-| Dataset (.zip)**                  | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip?download=true)   | 
-| UNet3D (10days)                   | [Download](https://mega.nz/file/RTZWlCZY#H9u2s6rSAfJlgLNZLIkVvZSnJRkCGrMhWS_wnIY_aUk)   | 
-| Unet3D (5 days after)             | [Download](https://mega.nz/file/ZSZyAIQZ#Lr7pttkFV7Dc3GtEN7MMJV4dVJO18GSG3LiihAnhQYI)   | 
-| Unet2D (10days)                   | [Download](https://mega.nz/file/AXZigRKa#p3P-4bwaj9VGuo65RuRtQj2rT0Tz6SDZ2a3XOF3jTGU)   | 
-| Unet2D (1day) Baseline            | [Download](https://mega.nz/file/YGoVVahS#CrOCSd6pcXqrzKrQZlDf6YGxbIvQt8Zu1JLYiir6_70)   | 
+| Dataset (.zip)**                  | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip)   | 
+| UNet3D (10days)                   | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch41.pth)   | 
+| Unet3D (5 days after)             | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch37.pth)   | 
+| Unet2D (10days)                   | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch42.pth)   | 
+| Unet2D (1day) Baseline            | [Download](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch33.pth)   | 
  
-** Dataset size is 10.34gb in .zip format when unzipped size will be 30.2gb
+** Dataset size is 11.1gb in .zip format when unzipped size is 30.2gb
 
 <br />
 
@@ -112,7 +117,6 @@ Dataset used is in .netCDF format and separated by year and by country for every
 ![Image 1e](https://github.com/nikos230/WildFireSpread/blob/main/screenshots/readme_map1.png)
 ![Image 1](https://github.com/nikos230/WildFireSpread/blob/main/screenshots/readme_map2.png)
 
-More to come soon...
 
 
 # Getting Started
@@ -121,7 +125,7 @@ To run the experiments you can either train the model from scratch or use the tr
 ## Prerequisites
 Install requirements.txt, which has all required frameworks for the project. It is recommended to make a conda enviroment and install all files there
 
-1. First Download the Dataset of the project from this [link](https://mega.nz/file/MDggRLxQ#XXeLnpCo2bsMugxs85NiS_HGjBuZLNVfsmPmxKdjF_Q), then extract it and place the folder named `dataset_64_64_all_10days_final` inside dataset folder on the project or
+1. First Download the Dataset of the project from this [link](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip), then extract it and place the folder named `dataset_64_64_all_10days_final` inside dataset folder on the project or
 anywhere in you PC like a SSD or NVME. Then specify the path to the folder inside configs/dataset.yaml in the `corrected_dataset_path:` variable.
 
 2. First create a new Conda Enviroment
@@ -168,9 +172,15 @@ To test the model Run `test_unet2d.py` and this withh return metrics, first 100 
 
 ### Testing the pre-trained Models
 If you do not train the models you can use the saved checkpoints from my work. You can download them from the links above.
-- For UNet3D, download the best model from this [link](https://mega.nz/folder/8O5RDBZQ#y3olJJq7_4IksUF5zDcV2g) and go to `configs/train_test_unet3d.yaml` and specify path to checkpoint in `checkpoint_path:` variable, then Run test_unet3d.py
-- For UNet2D, download the best model from this [link](https://mega.nz/folder/MOJlnADD#0KJSwgMoBSEN-TOGZTSyPw) and go to `configs/train_test_unet2d.yaml` and specify path to checkpoint in `checkpoint_path:` variable, then Run test_unet2d.py
+- For UNet3D, download the best model from this [link](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch41.pth) and go to `configs/train_test_unet3d.yaml` and specify path to checkpoint in `checkpoint_path:` variable, then Run test_unet3d.py
+- For UNet2D, download the best model from this [link](https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/model_epoch42.pth) and go to `configs/train_test_unet2d.yaml` and specify path to checkpoint in `checkpoint_path:` variable, then Run test_unet2d.py
 
+
+
+## Citation
+```
+To be added !
+```
 
 ## Contact
 For more info contact : nikolas619065@gmail.com <br /><br />
