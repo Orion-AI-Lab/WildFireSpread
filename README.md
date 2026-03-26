@@ -59,10 +59,10 @@ The Samples from the DataCube have 64km x 64km x 1day resoltuion, for every fire
 
 
 ## Deep Learning Models
-This project makes use of UNet2D and UNet3D models, the main difference in UNet3D is the 3D convolution which takes into account the temporal information of the samples as the 3D convolution can get info from 3 or more days at once, the 2D convolution is good for spartial feature extraction but not for temporal feature extraction. <br />
-Models trained and tested :
- - **Baseline model** U-Net 2D
- - **Proposed model** U-Net 3D
+This project makes use of UNet2D and UNet3D models, the main difference in UNet3D is the 3D convolution which takes into account the temporal information of the samples as the 3D convolution can get info from 3 or more days at once, the 2D convolution is good for spartial feature extraction but not for temporal feature extraction. <br /> <br />
+All Models trained and tested :
+ - U-Net 2D (Baseline model)
+ - U-Net 3D (Proposed model)
  - Vision Transformer
  - ConvLSTM
 
