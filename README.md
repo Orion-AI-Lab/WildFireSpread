@@ -9,7 +9,7 @@
 
 
 <p align="center">
-  <a href="https://github.com/Orion-AI-Lab/WildFireSpread/" target="_blank"><img alt="IEEE Access Paper" src="https://img.shields.io/badge/IEEE 𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download-ff0066" /></a>
+  <a href="https://github.com/Orion-AI-Lab/WildFireSpread/" target="_blank"><img alt="IEEE Access Paper" src="https://img.shields.io/badge/IEEE𝘈𝘤𝘤𝘦𝘴𝘴 Paper-View|Download-ff0066" /></a>
   <a href="https://huggingface.co/datasets/nikos230/WildfireSpread/resolve/main/dataset_64_64_10days.zip?download=true"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-Download-blue" /></a>
   <a href="https://mega.nz/file/RTZWlCZY#H9u2s6rSAfJlgLNZLIkVvZSnJRkCGrMhWS_wnIY_aUk"><img alt="Pre-trained model" src="https://img.shields.io/badge/Pre%20Trained%20Model-Download-blue" /></a>
   <a href="https://drive.google.com/drive/folders/1cw7qrxHi9VEAlh9IMnz4xCRiPZbUDBIH?usp=sharing"><img alt="Results" src="https://img.shields.io/badge/Results-View|Download-blue" /></a>
