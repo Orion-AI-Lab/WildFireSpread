@@ -179,7 +179,13 @@ If you do not train the models you can use the saved checkpoints from my work. Y
 
 ## Citation
 ```
-To be added !
+@article{anastasiou2025wildfire,
+  title={Wildfire spread forecasting with Deep Learning},
+  author={Anastasiou, Nikolaos and Kondylatos, Spyros and Papoutsis, Ioannis},
+  journal={arXiv preprint arXiv:2505.17556},
+  year={2025}
+}
+
 ```
 
 ## Contact
